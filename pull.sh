@@ -1,8 +1,15 @@
 #!/bin/bash
 
+# Pulls config files from local directories (like ~/.config/hypr) and copies it to git repo
+# without manually having to copy files from configs
+
 CONFIG_DIR=~/.config
 
 echo "Syncing config files..."
-cp $CONFIG_DIR/hypr/* hypr/
-cp $CONFIG_DIR/kitty/* kitty/
 
+cp -r $CONFIG_DIR/hypr/* hypr/
+cp -r $CONFIG_DIR/kitty/* kitty/
+cp -r $CONFIG_DIR/eww/* eww/
+cp -r $CONFIG_DIR/nvim/* nvim/
+
+echo "Sync complete!"
