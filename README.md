@@ -1,6 +1,15 @@
 # Configs
 my configs for everything i use on linux
 
+## Todos
+- [ ] Complete Hyprland config
+- [ ] write about said hyprland config
+- [ ] neovim config
+- [ ] eww config
+- [ ] some sort of daemon
+- [ ] program launcher
+- [ ] colour theme
+
 ## Images
 ![Desktop without bar](/display_2.png "Kanye")
 
