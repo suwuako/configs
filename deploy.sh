@@ -4,6 +4,9 @@
 
 CONFIG_DIR=~/.config
 
+echo "Pulling from github..."
+git pull
+
 echo "Deploying config files..."
 
 cp -r hypr/* $CONFIG_DIR/hypr/
