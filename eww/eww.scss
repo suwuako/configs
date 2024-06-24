@@ -1,15 +1,39 @@
-* { all: unset; }
-
-.box
+* { all: unset}
+.timebar_text
 {
-    background: rgb(149,37,133);
-    background: radial-gradient(circle, rgba(84,23,75,1) 0%, rgba(0,0,25,1) 100%);
+    font-size: 12pt;
+    font-family: "Source Code Pro";
+
+    color: white;
+
+    border-radius: 14px;
     
+    background: rgb(0,0,0);
+    background-size: 100%;
+}
+
+.date_text
+{
+    font-size: 12pt;
+    font-family: "Source Code Pro";
+
+    color: white;
+
     border: 1.4px solid #1c0e12;
     border-radius: 14px;
     
-    padding: 4px;
-    margin: 18px;
+    background: rgb(0,0,0);
+    background-size: 100%;
+}
+
+.text_wrapper
+{
+    padding: 3px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 14px;
+    background: rgb(0,0,0);
+
 }
 
 .bar
@@ -19,11 +43,8 @@
 
     border: 1.4px solid #1c0e12;
     border-radius: 14px;
-    padding: 4px;
+    padding: 3px;
 }
 
-.default_text
-{
-    font-size: 12pt;
-    font-family: "Source Code Pro";
-}
+
+

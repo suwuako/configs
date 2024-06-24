@@ -5,7 +5,7 @@
         geometry ; Geometry of the window.
         :anchor "top center" ; Values include top, center, bottom and left, center, right.
         :x "0" ; Position of the window. Values may be provided in px or %.
-        :y "10" ; Will be relative to anchor.
+        :y "5" ; Will be relative to anchor.
         :height "2%" ; Values may be provided in px or %.
         :width "90%"
     )
@@ -22,39 +22,41 @@
     )
 )
 
-(defwindow audio_menu 
-    :monitor 2 ; Can be either a number (X11 and Wayland) or an output name (X11 only).
-    :geometry ; Geometry of the window.
+(defwindow underbar
+    :monitor 2
+    :geometry
     (
-        geometry ; Geometry of the window.
-        :anchor "left center" ; Values include top, center, bottom and left, center, right.
-        :x "0" ; Position of the window. Values may be provided in px or %.
-        :y "10" ; Will be relative to anchor.
-        :height "90%" ; Values may be provided in px or %.
-        :width "2%"
+        geometry
+        :x "47.5%"
+        :y "0"
     )
-
-    ; Wayland
-
-    :stacking "bg" ; Possible values: fg, bg, overlay, bottom.
-    :exclusive "true" ; Whether the compositor should reserve space for the window.
-    :focusable "false" ; This is necessary for any widgets that use the keyboard to work.
+    :stacking "bg"
     :class "bar"
-    ;:namespace "??" ; Set the wayland layersurface namespace eww uses.
+    :exclusive "true"
+    :focusable "false"
     (
-        bar_wrapper
+        revealer
+        :reveal reveal_date
+
+        :halign "center"
+        :valign "start"
+
+        :vexpand "true"
+        :hexpand "true"
+
+        :active "true"
+        
+        :class "date_text"
+        "${time.day_name} ${time.day}/${time.month}/${time.year}"
     )
+
 )
 
 (defwidget bar_wrapper []
     (
         box
         (
-            displaytime
-        )
-        (
-            button
-            :onclick "scripts/audio_window.sh"
+            time_wrapper
         )
     )
 )
@@ -62,22 +64,38 @@
 
 (defpoll time :interval "1s"
         `date +'{
+                    "day_name":"%a",
                     "day":"%d",
                     "month":"%m",
                     "year":"%y",
                     "hour":"%H",
                     "min":"%M", 
-                    "sec":"%S"
+                    "sec":"%S",
+                    "time_text":"%H:%M:%S"
                 }'`
 )
 
-(defwidget displaytime []
+(defvar reveal_date "false")
+
+(defwidget time_wrapper []
     (
         box
         (
-            label :text "${time.hour}:${time.min}:${time.sec}"
-            :class "default_text"
-            :halign "end"
+            eventbox
+            :halign "center"
+            :valign "start"
+            
+            :vexpand "true"
+            :hexpand "true"
+
+            :active "true"
+            :onhover 'eww update reveal_date="true"'
+            :onhoverlost 'eww update reveal_date="false"'
+            
+            :width "120"
+            :class "timebar_text"
+            
+            "${time.time_text}"
         )
     )
 )
