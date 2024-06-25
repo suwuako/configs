@@ -49,7 +49,7 @@
 
 (defpoll time 
     :interval "1s"
-    `date +'{"time":"%H:%M:%S",
+    `date +'{"time":"%I:%M:%S",
             "day":"%a",
             "date":"%d/%m/%y"}'`
 )
