@@ -1,21 +1,35 @@
+/*
+Colours:
+    #C46E7B (BORDER)
+    #090021 (BACKGROUND)
+    #3100B8 dark blue
+    #00BBF9 blue
+    #FCECC9 yellow white beige
+    #7EB2DD teal
+*/
+/*
+                            TIME BAR TIME BAR TIME BAR
+*/
+
 .bar {
     background: rgb(84,23,75);
     background: radial-gradient(circle, 
                     rgba(84,23,75,1) 0%, 
-                    rgba(17,0,68,1) 65%, 
+                    rgba(17,0,68,1) 55%, 
                     rgba(0,0,25,1) 100%);
 
-    border-color: #292339;
+    border-color: #C46E7B;
     border-style: solid;
-    border-width: 1px;
+    border-width: 2px;
     border-radius: 14px;
 }
+
 .time_window {
-    background-color: transparent;
+    background: transparent;
 }
 
 .dp-container {
-    background-color: black;
+    background: transparent;
     color: white;
 }
 
@@ -24,7 +38,7 @@
     font-family: "Source Code Pro";
 
     color: white;
-    background-color: black;
+    background: transparent;
 
     border-radius: 14px;
 }
@@ -33,8 +47,52 @@
     font-size: 12pt;
     font-family: "Source Code Pro";
 
-    background-color: black;
+    background-color: transparent;
     color: white;
     
   border-radius: 14px;
 }
+
+/*----------------------------------------------------------------------------------------------------------------
+                                    toolbar
+-----------------------------------------------------------------------------------------------------------------*/
+
+/*
+Colours:
+    #C46E7B (BORDER)
+    #090021 (BACKGROUND)
+    #3100B8 dark blue
+    #00BBF9 blue
+    #FCECC9 yellow white beige
+    #7EB2DD teal
+    #5E2788 purple
+*/
+
+.toolbar {
+    border-color: #C46E7B;
+    border-style: solid;
+
+    border-width: 2px;
+    border-radius: 50px;
+    
+    background: rgb(94,39,136);
+    background: rgba(9,0,33,1); 
+}
+
+.toolbar_hover {
+    color: white;
+
+    background: transparent;
+}
+
+.audio_button {
+    border: transparent;
+    border-radius: 14px;
+    background: black;
+
+    font-size: 14pt;
+    font-family: "FontAwesome";
+
+    color: #090021;
+}
+

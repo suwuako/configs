@@ -1,8 +1,12 @@
+;---------------------------------------------------------------------------------------------------------------------
+;                                   TIME BAR CONFIG
+;---------------------------------------------------------------------------------------------------------------------
+
 (defwindow bar
     :monitor 2
     :geometry (geometry :x "0"
-                        :y "0.5%"
-                        :width "80%"
+                        :y "10px"
+                        :width "12%"
                         :height "2.3%"
                         :anchor "top center")
     :stacking "fg"
@@ -13,13 +17,12 @@
 (defwindow time_window
     :monitor 2
     :geometry (geometry :x "0%"
-                        :y "-2.15%"
-                        :width "5%"
-                        :height "2%"
+                        :y "-45px"
+                        :width "13%"
+                        :height "4%"
                         :anchor "top center")
                 
     :stacking "fg"
-    :exclusive "true"
     (
         timebar
     )
@@ -27,29 +30,90 @@
 
 (defwidget timebar []
     (eventbox
-        :timeout "10000ms"
+        :timeout "100ms"
         :class "timebar"
-        :onhover "eww o datebar"
-        :onhoverlost "eww c datebar"
+        :onclick "eww o datebar --toggle"
+        :onhover "eww o datebar --toggle"
+        :onhoverlost "eww o datebar --toggle"
         "${time.time}")
 )
 
 (defwindow datebar
     :monitor 2
     :geometry (geometry :x "0px"
-                        :y "-2.15%"
-                        :width "6%"
+                        :y "-30px"
+                        :width "20%"
                         :height "2%"
                         :anchor "top center")
     :hexpand "true"
     :stacking "fg"
     :exclusive "false"
-    "${time.day}, ${time.date}"
+    (
+        dateclick
+    )
 )
+
+(defwidget dateclick []
+    (box
+        (transform
+            :translate-x "45px"
+            "${time.day}"
+            
+        )
+        (transform
+            :translate-x "-30px"
+            "${time.date}")
+    )
+)
+
 
 (defpoll time 
     :interval "1s"
     `date +'{"time":"%I:%M:%S",
             "day":"%a",
             "date":"%d/%m/%y"}'`
+)
+
+;---------------------------------------------------------------------------------------------------------------------
+;                                   AUDIO BAR CONFIG
+;---------------------------------------------------------------------------------------------------------------------
+
+(defwindow toolbar
+    :monitor 2
+    :geometry (geometry :x "20px"
+                        :y "-35px"
+                        :width "35px"
+                        :height "2.3%"
+                        :anchor "top right")
+    :stacking "fg"
+    :exclusive "true"
+    (
+        toolbar_hover
+    )
+)
+
+(defvar extend_toolbar "true")
+(defwidget toolbar_hover []
+    (box
+        :class "toolbar_hover"
+        :spacing "10"
+        :space-evenly "false"
+        (revealer
+            :transition "slideleft"
+            :reveal "${extend_toolbar}"
+            (box
+                (label
+                :text "meow")
+                (label
+                :text "woof")
+                (label
+                :text "honk")
+            )
+        )
+        (eventbox 
+            :halign "center"
+            :onclick {extend_toolbar ? "eww update extend_toolbar='false'" : "eww update extend_toolbar='true'"}
+            "   "
+        )
+    )
 )
