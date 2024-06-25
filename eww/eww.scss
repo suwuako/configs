@@ -1,50 +1,40 @@
-* { all: unset}
-.timebar_text
-{
+.bar {
+    background: rgb(84,23,75);
+    background: radial-gradient(circle, 
+                    rgba(84,23,75,1) 0%, 
+                    rgba(17,0,68,1) 65%, 
+                    rgba(0,0,25,1) 100%);
+
+    border-color: #292339;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 14px;
+}
+.time_window {
+    background-color: transparent;
+}
+
+.dp-container {
+    background-color: black;
+    color: white;
+}
+
+.timebar {
     font-size: 12pt;
     font-family: "Source Code Pro";
 
     color: white;
+    background-color: black;
 
     border-radius: 14px;
-    
-    background: rgb(0,0,0);
-    background-size: 100%;
 }
 
-.date_text
-{
+.datebar {
     font-size: 12pt;
     font-family: "Source Code Pro";
 
+    background-color: black;
     color: white;
-
-    border: 1.4px solid #1c0e12;
-    border-radius: 14px;
     
-    background: rgb(0,0,0);
-    background-size: 100%;
+  border-radius: 14px;
 }
-
-.text_wrapper
-{
-    padding: 3px;
-    padding-left: 18px;
-    padding-right: 18px;
-    border-radius: 14px;
-    background: rgb(0,0,0);
-
-}
-
-.bar
-{
-    background: rgb(149,37,133);
-    background: radial-gradient(circle, rgba(84,23,75,1) 0%, rgba(0,0,25,1) 100%);
-
-    border: 1.4px solid #1c0e12;
-    border-radius: 14px;
-    padding: 3px;
-}
-
-
-
