@@ -12,6 +12,3 @@ PS1='[\u@\h \W]\$ '
 
 eval "$(thefuck --alias)"
 eval "$(zoxide init --cmd cd bash)"
-
-
-neofetch | lolcat

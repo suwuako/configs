@@ -1,119 +1,161 @@
-;---------------------------------------------------------------------------------------------------------------------
-;                                   TIME BAR CONFIG
-;---------------------------------------------------------------------------------------------------------------------
+;          === colour themes ===
+; #F0F0F0 white
+; #7F7F7F grey
+; #F7B801 yellow
+; #F18701 orange
+; #122932 navy
+; #191919 black
 
-(defwindow bar
-    :monitor 2
-    :geometry (geometry :x "0"
-                        :y "10px"
-                        :width "12%"
-                        :height "2.3%"
-                        :anchor "top center")
-    :stacking "fg"
-    :exclusive "true"
-    ""
+;           === general functions ===
+
+;           === volume ===
+(defwindow volblock
+            :monitor 2
+            :geometry (geometry :y "-36px"
+                                :x "96.3%"
+                                :width "3%"
+                                :height "2.5%")
+            :exclusive true
+    (voldisplay)
 )
 
-(defwindow time_window
-    :monitor 2
-    :geometry (geometry :x "0%"
-                        :y "-45px"
-                        :width "13%"
-                        :height "4%"
-                        :anchor "top center")
-                
-    :stacking "fg"
-    (
-        timebar
+(defwidget voldisplay []
+    (button
+        :class "voltext"
+        :onclick "eww o volcontrol --toggle"
+        " ${volume}%"
     )
 )
 
-(defwidget timebar []
-    (eventbox
-        :timeout "100ms"
-        :class "timebar"
-        :onclick "eww o datebar --toggle"
-        :onhover "eww o datebar --toggle"
-        :onhoverlost "eww o datebar --toggle"
-        "${time.time}")
+(defwindow volcontrol
+            :monitor 2
+            :geometry (geometry :y "1.2%"
+                                :x "89.3%"
+                                :width "10%"
+                                :height "4%")
+            :exclusive true
+    (volmenu)
 )
 
-(defwindow datebar
-    :monitor 2
-    :geometry (geometry :x "0px"
-                        :y "-30px"
-                        :width "20%"
-                        :height "2%"
-                        :anchor "top center")
-    :hexpand "true"
-    :stacking "fg"
-    :exclusive "false"
-    (
-        dateclick
-    )
-)
-
-(defwidget dateclick []
+(defvar voldevices false)
+(defwidget volmenu []
     (box
-        (transform
-            :translate-x "45px"
-            "${time.day}"
-            
+        :orientation "v"
+        :space-evenly "false"
+        (label
+            :xalign "0.1"
+            :class "voltext"
+            :text "vol"
+            :style "margin-top: 5px;
+                    margin-bottom: 5px;")
+        (scale
+            :width "5"
+            :orientation "h"
+            :value volume
+            :min "0"
+            :max "101"
+            :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%")
+        (button
+            :class "voltext"
+            :onclick "eww update voldevices='true'"
+            :style "margin-top: 5px;
+                    margin-bottom: 5px;
+                    margin-right: 120px;"
+            "Devices"
         )
-        (transform
-            :translate-x "-30px"
-            "${time.date}")
+        (revealer
+            :reveal voldevices
+            :visible voldevices
+            :transition "slidedown"
+            :class "voltext"
+            "freaky")
     )
 )
 
 
+;           === wifi ===
+(defwindow wifiblock
+            :monitor 2
+            :geometry (geometry :y "-36px"
+                                :x "96.5%"
+                                :height "2.5%")
+            :exclusive true
+    (wifidisplay)
+)
+
+(defwidget wifidisplay []
+    (box
+        " ${wifiname}"
+    )
+)
+
+;           === time ===
+(defwindow timeblock
+            :monitor 2
+            :geometry (geometry :y "20px"
+                                :width "4%"
+                                :height "2.5%"
+                                :anchor "top center")
+            :exclusive true
+    (timedisplay)
+)
+
+(defvar showtime "false")
+(defwidget timedisplay []
+    (box
+        :hexpand true
+        (revealtime
+            :halign "start"
+            :reveal showtime
+            :content "${time.day}"
+            :transition "slideright")
+        (eventbox
+            :hexpand "false"
+            :class "timetext"
+            :width "50"
+            :active "true"
+            :onhover "eww update showtime='true'"
+            :onhoverlost "eww update showtime='false'"
+            "${time.time}"
+        )
+        (revealtime
+            :halign "end"
+            :reveal showtime
+            :content "${time.date}"
+            :transition "slideright")
+    )
+)
+
+(defwidget revealtime [halign reveal content transition]
+
+    (revealer
+            :class "timetext"
+            :active false
+            :width "110"
+            :hexpand true
+            :vexpand true
+            :transition transition
+            :reveal reveal
+            :visible reveal
+            :duration "100"
+            content
+    )
+)
+;           === data polling ===
 (defpoll time 
-    :interval "1s"
-    `date +'{"time":"%I:%M:%S",
+            :interval "1s"
+            :initial "whatever"
+            `date +'{"time":"%I:%M:%S",
             "day":"%a",
             "date":"%d/%m/%y"}'`
 )
 
-;---------------------------------------------------------------------------------------------------------------------
-;                                   AUDIO BAR CONFIG
-;---------------------------------------------------------------------------------------------------------------------
-
-(defwindow toolbar
-    :monitor 2
-    :geometry (geometry :x "20px"
-                        :y "-35px"
-                        :width "35px"
-                        :height "2.3%"
-                        :anchor "top right")
-    :stacking "fg"
-    :exclusive "true"
-    (
-        toolbar_hover
-    )
+(defpoll wifiname
+        :interval "5s"
+        `nmcli -g NAME con | awk '{print $1}'`
 )
 
-(defvar extend_toolbar "true")
-(defwidget toolbar_hover []
-    (box
-        :class "toolbar_hover"
-        :spacing "10"
-        :space-evenly "false"
-        (revealer
-            :transition "slideleft"
-            :reveal "${extend_toolbar}"
-            (box
-                (label
-                :text "meow")
-                (label
-                :text "woof")
-                (label
-                :text "honk")
-            )
-        )
-        (eventbox 
-            :halign "center"
-            :onclick {extend_toolbar ? "eww update extend_toolbar='false'" : "eww update extend_toolbar='true'"}
-            "   "
-        )
-    )
+(defpoll volume
+        :interval ".1s"
+        `pactl get-sink-volume @DEFAULT_SINK@ | awk '{print substr($5, 1, length($5) - 1)}'`
 )

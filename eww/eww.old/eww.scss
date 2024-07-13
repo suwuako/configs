@@ -1,50 +1,97 @@
-* { all: unset}
-.timebar_text
-{
+/*
+Colours:
+    #C46E7B (BORDER)
+    #090021 (BACKGROUND)
+    #3100B8 dark blue
+    #00BBF9 blue
+    #FCECC9 yellow white beige
+    #7EB2DD teal
+*/
+/*
+                            TIME BAR TIME BAR TIME BAR
+*/
+
+.bar {
+    background: rgb(84,23,75);
+    background: radial-gradient(circle, 
+                    rgba(84,23,75,1) 0%, 
+                    rgba(17,0,68,1) 55%, 
+                    rgba(0,0,25,1) 100%);
+
+    border-color: #C46E7B;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 14px;
+}
+
+.time_window {
+    background: transparent;
+}
+
+.dp-container {
+    background: transparent;
+    color: white;
+}
+
+.timebar {
     font-size: 12pt;
     font-family: "Source Code Pro";
 
     color: white;
+    background: transparent;
 
     border-radius: 14px;
-    
-    background: rgb(0,0,0);
-    background-size: 100%;
 }
 
-.date_text
-{
+.datebar {
     font-size: 12pt;
     font-family: "Source Code Pro";
 
+    background-color: transparent;
+    color: white;
+    
+  border-radius: 14px;
+}
+
+/*----------------------------------------------------------------------------------------------------------------
+                                    toolbar
+-----------------------------------------------------------------------------------------------------------------*/
+
+/*
+Colours:
+    #C46E7B (BORDER)
+    #090021 (BACKGROUND)
+    #3100B8 dark blue
+    #00BBF9 blue
+    #FCECC9 yellow white beige
+    #7EB2DD teal
+    #5E2788 purple
+*/
+
+.toolbar {
+    border-color: #C46E7B;
+    border-style: solid;
+
+    border-width: 2px;
+    border-radius: 50px;
+    
+    background: rgba(9,0,33,1); 
+}
+
+.toolbar_hover {
     color: white;
 
-    border: 1.4px solid #1c0e12;
-    border-radius: 14px;
-    
-    background: rgb(0,0,0);
-    background-size: 100%;
+    background: transparent;
 }
 
-.text_wrapper
-{
-    padding: 3px;
-    padding-left: 18px;
-    padding-right: 18px;
+.audio_button {
+    border: transparent;
     border-radius: 14px;
-    background: rgb(0,0,0);
+    background: black;
 
+    font-size: 14pt;
+    font-family: "FontAwesome";
+
+    color: #090021;
 }
-
-.bar
-{
-    background: rgb(149,37,133);
-    background: radial-gradient(circle, rgba(84,23,75,1) 0%, rgba(0,0,25,1) 100%);
-
-    border: 1.4px solid #1c0e12;
-    border-radius: 14px;
-    padding: 3px;
-}
-
-
 

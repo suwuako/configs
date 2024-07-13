@@ -1,97 +1,81 @@
 /*
-Colours:
-    #C46E7B (BORDER)
-    #090021 (BACKGROUND)
-    #3100B8 dark blue
-    #00BBF9 blue
-    #FCECC9 yellow white beige
-    #7EB2DD teal
-*/
-/*
-                            TIME BAR TIME BAR TIME BAR
+;          === colour themes ===
+; #F0F0F0 white
+; #7F7F7F grey
+; #F7B801 yellow
+; #F18701 orange
+; #191919 black
 */
 
-.bar {
-    background: rgb(84,23,75);
-    background: radial-gradient(circle, 
-                    rgba(84,23,75,1) 0%, 
-                    rgba(17,0,68,1) 55%, 
-                    rgba(0,0,25,1) 100%);
+* { all: unset; font-size: 12pt; }
 
-    border-color: #C46E7B;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 14px;
+.voltext {
+    color: #122932;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: "Source Code Pro";
 }
 
-.time_window {
-    background: transparent;
+.timetext {
+    color: #F7b801;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: "Source Code Pro";
 }
 
-.dp-container {
-    background: transparent;
-    color: white;
-}
-
-.timebar {
+.wifiblock {
     font-size: 12pt;
     font-family: "Source Code Pro";
+    background: #7f7f7f;
 
-    color: white;
-    background: transparent;
-
-    border-radius: 14px;
+    border-width: 1.5px;
+    border-color: #191919;
+    border-radius: 8px;
 }
 
-.datebar {
+.timeblock {
     font-size: 12pt;
     font-family: "Source Code Pro";
+    background: #7f7f7f;
 
-    background-color: transparent;
-    color: white;
-    
-  border-radius: 14px;
+    border-width: 1.5px;
+    border-color: #191919;
+    border-radius: 8px;
 }
 
-/*----------------------------------------------------------------------------------------------------------------
-                                    toolbar
------------------------------------------------------------------------------------------------------------------*/
+.volblock {
+    font-size: 12pt;
+    font-family: "Source Code Pro";
+    background: #7f7f7f;
 
-/*
-Colours:
-    #C46E7B (BORDER)
-    #090021 (BACKGROUND)
-    #3100B8 dark blue
-    #00BBF9 blue
-    #FCECC9 yellow white beige
-    #7EB2DD teal
-    #5E2788 purple
-*/
+    border-width: 1.5px;
+    border-color: #191919;
+    border-radius: 8px;
+}
 
-.toolbar {
-    border-color: #C46E7B;
+.volcontrol {
+    font-size: 12pt;
+    font-family: "Source Code Pro";
+    background: #7f7f7f;
+
+    border-width: 1.5px;
+    border-color: #191919;
     border-style: solid;
-
-    border-width: 2px;
-    border-radius: 50px;
-    
-    background: rgba(9,0,33,1); 
+    border-radius: 8px;
 }
 
-.toolbar_hover {
-    color: white;
-
-    background: transparent;
+scale trough highlight {
+    background-color: #F0F0F0;
+    border-radius: 9px;
 }
 
-.audio_button {
-    border: transparent;
-    border-radius: 14px;
-    background: black;
+scale trough {
+    all: unset;
+    background-color: #122932;
+    border-radius: 9px;
+    min-height: 8px;
+    min-width: 50px;
 
-    font-size: 14pt;
-    font-family: "FontAwesome";
-
-    color: #090021;
+    margin-left: 20px;
+    margin-right: 20px;
 }
-
