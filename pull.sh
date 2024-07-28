@@ -12,6 +12,7 @@ cp -r $CONFIG_DIR/hypr/* hypr/
 cp -r $CONFIG_DIR/kitty/* kitty/
 cp -r $CONFIG_DIR/eww/* eww/
 cp -r $CONFIG_DIR/nvim/* nvim/
+cp -r $CONFIG_DIR/evremap/* evremap/
 cp $HOME_DIR/.bashrc .
 
 echo "Sync complete!"

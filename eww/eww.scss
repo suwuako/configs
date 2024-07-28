@@ -9,6 +9,14 @@
 
 * { all: unset; font-size: 12pt; }
 
+
+.batterytext {
+    color: #122932;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: "Source Code Pro";
+}
+
 .voltext {
     color: #122932;
     font-size: 12pt;
@@ -44,6 +52,16 @@
 }
 
 .volblock {
+    font-size: 12pt;
+    font-family: "Source Code Pro";
+    background: #7f7f7f;
+
+    border-width: 1.5px;
+    border-color: #191919;
+    border-radius: 8px;
+}
+
+.batteryblock {
     font-size: 12pt;
     font-family: "Source Code Pro";
     background: #7f7f7f;

@@ -8,9 +8,28 @@
 
 ;           === general functions ===
 
+;           === battery ===
+(defwindow batteryblock
+            :monitor "C27HG7x"
+            :geometry (geometry :y "-36px"
+                                :x "90%"
+                                :width "3%"
+                                :height "2.5%")
+            :exclusive true
+    (batterydisplay)
+)
+
+(defwidget batterydisplay []
+    (button
+        :class "batterytext"
+        :onclick "eww o volcontrol --toggle"
+        " ${mousebattery}"
+    )
+)
+
 ;           === volume ===
 (defwindow volblock
-            :monitor 2
+            :monitor "C27HG7x"
             :geometry (geometry :y "-36px"
                                 :x "96.3%"
                                 :width "3%"
@@ -28,10 +47,10 @@
 )
 
 (defwindow volcontrol
-            :monitor 2
+            :monitor "C27HG7x"
             :geometry (geometry :y "1.2%"
-                                :x "89.3%"
-                                :width "10%"
+                                :x "90%"
+                                :width "9.3%"
                                 :height "4%")
             :exclusive true
     (volmenu)
@@ -57,7 +76,7 @@
             :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%")
         (button
             :class "voltext"
-            :onclick "eww update voldevices='true'"
+            :onclick {voldevices ? "eww update voldevices='false'" : "eww update voldevices='true'"}
             :style "margin-top: 5px;
                     margin-bottom: 5px;
                     margin-right: 120px;"
@@ -65,7 +84,7 @@
         )
         (revealer
             :reveal voldevices
-            :visible voldevices
+            :visible true
             :transition "slidedown"
             :class "voltext"
             (box
@@ -80,7 +99,7 @@
                 )
                 (button
                     :class "voltext"
-                    :onclick "pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo"
+                    :onclick "pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo.2"
                     :style "margin-top: 5px;
                             margin-bottom: 5px;
                             margin-right: 10px;"
@@ -94,7 +113,7 @@
 
 ;           === wifi ===
 (defwindow wifiblock
-            :monitor 2
+            :monitor "C27HG7x"
             :geometry (geometry :y "-36px"
                                 :x "96.5%"
                                 :height "2.5%")
@@ -110,7 +129,7 @@
 
 ;           === time ===
 (defwindow timeblock
-            :monitor 2
+            :monitor "C27HG7x"
             :geometry (geometry :y "20px"
                                 :width "4%"
                                 :height "2.5%"
@@ -122,14 +141,13 @@
 (defvar showtime "false")
 (defwidget timedisplay []
     (box
+        :orientation "h"
         :hexpand true
         (revealtime
-            :halign "start"
             :reveal showtime
             :content "${time.day}"
-            :transition "slideright")
+            :transition "slideleft")
         (eventbox
-            :hexpand "false"
             :class "timetext"
             :width "50"
             :active "true"
@@ -138,21 +156,18 @@
             "${time.time}"
         )
         (revealtime
-            :halign "end"
             :reveal showtime
             :content "${time.date}"
             :transition "slideright")
     )
 )
 
-(defwidget revealtime [halign reveal content transition]
+(defwidget revealtime [reveal content transition]
 
     (revealer
             :class "timetext"
-            :active false
             :width "110"
             :hexpand true
-            :vexpand true
             :transition transition
             :reveal reveal
             :visible reveal
@@ -177,4 +192,9 @@
 (defpoll volume
         :interval ".1s"
         `pactl get-sink-volume @DEFAULT_SINK@ | awk '{print substr($5, 1, length($5) - 1)}'`
+)
+
+(defpoll mousebattery
+        :interval "60s"
+        `upower -i /org/freedesktop/UPower/devices/battery_hidpp_battery_0 | grep "percentage" | jq -R 'split("  ") | .[7]' | tr -d '"'`
 )
