@@ -49,6 +49,3 @@ vim.opt.smarttab = true
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
--- colourscheme
-vim.cmd.colorscheme "catppuccin"
-vim.notify = require("notify")

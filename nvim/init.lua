@@ -1,13 +1,15 @@
--- TODOS
--- [ ] catppuccin
+-- TODO:
+-- [x] catppuccin
 -- [ ] neotree
 -- [ ] nvim-notify
 -- [ ] telescope
 -- [ ] whichkey
--- [ ] treesitter
--- [ ] lsp
--- [ ] mason
+-- [x] treesitter
+-- [x] lsp
+-- [x] mason
 -- [ ] startup
+-- [ ] persistence
+-- [ ] autocomplete
 
 -- setup lazy
 require("config.lazy")
@@ -15,3 +17,4 @@ require("config.lazy")
 -- setup options
 require("config.options")
 require("config.keymaps")
+require("config.autocommands")
