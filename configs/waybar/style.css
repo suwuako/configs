@@ -1,3 +1,5 @@
+@define-color pink rgb(245, 194, 231);
+@define-color mauve rgb(203, 166, 247);
 @define-color maroon rgba(235, 160, 172, 0.8);
 @define-color peach rgb(250, 179, 135);
 @define-color yellow rgba(249, 226, 175, 1);
@@ -7,9 +9,10 @@
 @define-color mantle rgb(24, 24, 37);
 @define-color base rgb(30, 30, 46);
 @define-color text rgb(205, 214, 244);
+@define-color transparent rgba(0, 0, 0, 0);
 
 @define-color border_color rgba(180, 190, 254, 0.8);	/* lavender */
-@define-color module_bg rgba(49, 50, 68, 0.8);			/* Surface 0 */
+@define-color module_bg rgba(49, 50, 68, 1);			/* Surface 0 */
 @define-color text_color @text;
 @define-color text_border @crust;
 
@@ -17,13 +20,16 @@
 	font-size: 15px; 
 	font-family: hermit, "Symbols Nerd Font Mono";
 	font-weight: bold;	
+	color: @text_color;
+
+    /*          SHADOW TEXT
 	text-shadow:
 		2px  2px 0 @text_border,
 		1px -1px 0 @text_border,  
 		1px -1px 0 @text_border,
 		-1px  1px 0 @text_border,
 		1px  1px 0 @text_border;
-	color: @text_color;
+    */
 
 	/*			DEBUG
 	border-style: solid;
@@ -32,27 +38,127 @@
 	*/
 }
 
-#cpu, #memory, #clock {
+.modules-right, #clock, .modules-left {
 	border-style: solid;
 	border-width: 2.4px;
 	border-color: @border_color;
 
 	background-color: @module_bg;
+	border-radius: 10px;
+}
+
+#cpu, #memory, #disk, #temperature, #network, #workspaces, #pulseaudio {
+	border-width: 2.4px;
+	border-style: solid;
+	border-radius: 10px;
+
 	padding-right: 10px;
 	padding-left: 10px;
-	border-radius: 10px;
 }
 
 #cpu {
 	color: @sky;
+	border-color: @sky;
 }
 
 #memory {
 	color: @green;
+	border-color: @green;
+}
+
+#disk {
+    color: @yellow;
+	border-color: @yellow;
+}
+
+#temperature{
+    color: @mauve;
+    border-color: @mauve;
+}
+
+#network {
+    color: @pink;
+	border-color: @pink;
 }
 
 #clock {
 	color: @text;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#workspaces {
+	border-color: @pink;
+
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+#workspaces button {
+    color: @pink;
+    padding: 0 1px;
+    box-shadow: none;
+}
+
+#workspaces button.persistant {
+    color: @pink;
+}
+
+#workspaces button.empty {
+    color: @yellow;
+}
+
+#workspaces button.active {
+    color: @green;
+    background: @transparent;
+    border: @transparent;
+}
+
+#workspaces button:hover {
+    background: @transparent;
+    border: @transparent;
+}
+
+.groupaudio {
+	border-color: @sky;
+	border-width: 2.4px;
+	border-style: solid;
+	border-radius: 10px;
+}
+
+#pulseaudio {
+	color: @sky;
+	padding-right: 10px;
+
+	border-color: @sky;
+}
+
+#pulseaudio-slider {
+    min-width: 150px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 4px;
+    background-color: @text;
+    border-color: @text;
+	border-radius: 25px;
+    border-style: solid;
+}
+#pulseaudio-slider highlight {
+    min-height: 4px;
+    background-color: @sky;
+    border-color: @sky;
+	border-radius: 25px;
+    border-style: solid;
 }
 
 window#waybar{

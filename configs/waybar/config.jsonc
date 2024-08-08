@@ -5,14 +5,18 @@
 	"margin-top": 6,
 	"margin-left": 8,
 	"margin-right": 8,
-	"margin-bottom": -16,
-	"spacing": 20,
+	"margin-bottom": -14,
+	"spacing": 10,
 	"output": "DP-1",			// EDIT THIS FOR MONITOR
 
 	"modules-left" : [
 		"cpu",
 		"memory",
-		"battery",
+		"disk#root",
+		"disk#home",
+		/*"disk#media",*/
+        "temperature#cpu",
+        "network",
 	],
 
 	"modules-center" : [
@@ -21,7 +25,10 @@
 
 	"modules-right" : [
 		"hyprland/workspaces",
+        "group/audio",
 	],
+
+
 
 	"cpu" : {
 		"interval": 5,
@@ -33,9 +40,40 @@
 		"format": "\uefc5 {percentage}%",
 	},
 
-	"battery" : { 
-		"interval": 5,
-	},
+    "disk#root" : {
+        "interval": 300,
+        "format": " {path}: {percentage_used}%",
+        "path": "/"
+    },
+    "disk#home" : {
+        "interval": 300,
+        "format": "{path}: {percentage_used}%",
+        "path": "/home"
+    },
+    "disk#media" : {
+        "interval": 300,
+        "format": "{path}: {percentage_used}%",
+        "path": "/media"
+    },
+
+    "temperature#cpu": {
+        "interval": 5,
+        "format": " {temperatureC}°C",
+        "thermal-zone": 2,
+    },
+
+    "network" : {
+        "interval": 5,
+        "interface": "wlp3s0",
+        "unit": "MB",
+        "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+        "format-disconnected": "no internet :c",
+        "format-icons": {
+        },
+    },
+
+
+
 
 	"clock" : {
 		"timezone": "Australia/Sydney",
@@ -45,8 +83,51 @@
 		"format-alt": "{:%a, %d/%m/%y}",
 	},
 
+
+
+
 	"hyprland/workspaces": {
-		"format": "",
+        "format": "{icon}",
+        "all-outputs": false,
+        "format-icons": {
+            "active-only": false,
+            "active": "",
+            "empty": "",
+            "default": "",
+        },
+        "persistent-workspaces": {
+            "DP-1": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
+        },
 	},
 
+    "group/audio": {
+        "orientation": "inherit",
+        "drawer" : {
+            "transition-duration": 500,
+            "transition-left-to-right": true,
+            "children-class": "groupaudio",
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider",
+        ],
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "|  0%",
+        "states": {
+            "low": "15",
+            "medium": "40",
+            "high": "100",
+        },
+        "format-icons": {
+            "default": ["", "", ""],
+        },
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+    }
 }

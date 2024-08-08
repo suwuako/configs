@@ -20,6 +20,7 @@ return {
 
             lspconfig.lua_ls.setup ({})
             lspconfig.clangd.setup ({})
+            lspconfig.css_variables.setup ({})
         end
     },
 
