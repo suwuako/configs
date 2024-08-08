@@ -9,10 +9,11 @@ git pull
 
 echo "Deploying config files..."
 
-cp -r hypr/* $CONFIG_DIR/hypr/
-cp -r kitty/* $CONFIG_DIR/kitty/
-cp -r eww/* $CONFIG_DIR/eww/
-cp -r nvim/* $CONFIG_DIR/nvim/
-cp -r waybar/* $CONFIG_DIR/waybar
+cp -r configs/hypr/* $CONFIG_DIR/hypr/
+cp -r configs/kitty/* $CONFIG_DIR/kitty/
+cp -r configs/eww/* $CONFIG_DIR/eww/
+cp -r configs/nvim/* $CONFIG_DIR/nvim/
+cp -r configs/waybar/* $CONFIG_DIR/waybar
+cp -r configs/evremap/* $CONFIG_DIR/evremap
 
 echo "deployment complete!"
