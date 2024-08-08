@@ -12,3 +12,6 @@ PS1='[\u@\h \W]\$ '
 
 eval "$(thefuck --alias)"
 eval "$(zoxide init --cmd cd bash)"
+
+# python
+VIRTUAL_ENV_DISABLE_PROMPT=1 . /home/suwa/projects/py-venv/bin/activate

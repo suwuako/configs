@@ -15,5 +15,6 @@ cp -r configs/eww/* $CONFIG_DIR/eww/
 cp -r configs/nvim/* $CONFIG_DIR/nvim/
 cp -r configs/waybar/* $CONFIG_DIR/waybar
 cp -r configs/evremap/* $CONFIG_DIR/evremap
+cp configs/.bashrc ~/
 
 echo "deployment complete!"

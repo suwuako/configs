@@ -14,6 +14,6 @@ cp -r $CONFIG_DIR/eww/* configs/eww/
 cp -r $CONFIG_DIR/nvim/* configs/nvim/
 cp -r $CONFIG_DIR/evremap/* configs/evremap/
 cp -r $CONFIG_DIR/waybar/* configs/waybar/
-cp $HOME_DIR/.bashrc .
+cp $HOME_DIR/.bashrc configs/
 
 echo "Sync complete!"
