@@ -13,5 +13,6 @@ cp -r hypr/* $CONFIG_DIR/hypr/
 cp -r kitty/* $CONFIG_DIR/kitty/
 cp -r eww/* $CONFIG_DIR/eww/
 cp -r nvim/* $CONFIG_DIR/nvim/
+cp -r waybar/* $CONFIG_DIR/waybar
 
 echo "deployment complete!"

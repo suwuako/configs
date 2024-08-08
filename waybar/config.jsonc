@@ -1,0 +1,52 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 35,
+	"margin-top": 6,
+	"margin-left": 8,
+	"margin-right": 8,
+	"margin-bottom": -16,
+	"spacing": 20,
+	"output": "DP-1",			// EDIT THIS FOR MONITOR
+
+	"modules-left" : [
+		"cpu",
+		"memory",
+		"battery",
+	],
+
+	"modules-center" : [
+		"clock",
+	],
+
+	"modules-right" : [
+		"hyprland/workspaces",
+	],
+
+	"cpu" : {
+		"interval": 5,
+		"format": ": {usage}%",
+	},
+
+	"memory" : {
+		"interval": 5,
+		"format": "\uefc5 {percentage}%",
+	},
+
+	"battery" : { 
+		"interval": 5,
+	},
+
+	"clock" : {
+		"timezone": "Australia/Sydney",
+		"interval":	1,
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format": "{:%H:%M:%S}",
+		"format-alt": "{:%a, %d/%m/%y}",
+	},
+
+	"hyprland/workspaces": {
+		"format": "",
+	},
+
+}

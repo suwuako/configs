@@ -14,4 +14,4 @@ eval "$(thefuck --alias)"
 eval "$(zoxide init --cmd cd bash)"
 
 # python
-VIRTUAL_ENV_DISABLE_PROMPT=1 . /home/suwa/projects/py-venv/bin/activate
+VIRTUAL_ENV_DISABLE_PROMPT=1 . ~/projects/py-venv/bin/activate
