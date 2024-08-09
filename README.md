@@ -5,7 +5,8 @@ my configs for everything i use on linux
 - [ ] Complete Hyprland config
 - [ ] write about said hyprland config
 - [ ] neovim config
-- [ ] eww config
+~~- [ ] eww config~~
+- [x] waybar config
 - [ ] some sort of daemon
 - [ ] program launcher
 - [ ] colour theme
