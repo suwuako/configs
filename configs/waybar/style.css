@@ -38,7 +38,7 @@
 	*/
 }
 
-.modules-right, #clock, .modules-left {
+.modules-center, .modules-right, .modules-left {
 	border-style: solid;
 	border-width: 2.4px;
 	border-color: @border_color;
@@ -47,7 +47,7 @@
 	border-radius: 10px;
 }
 
-#cpu, #memory, #disk, #temperature, #network, #workspaces, #pulseaudio {
+#cpu, #memory, #disk, #temperature, #network, #workspaces, #pulseaudio, #window {
 	border-width: 2.4px;
 	border-style: solid;
 	border-radius: 10px;
@@ -124,6 +124,11 @@
 	border-width: 2.4px;
 	border-style: solid;
 	border-radius: 10px;
+}
+
+#window {
+    color: @mauve;
+    border-color: @mauve;
 }
 
 #pulseaudio {

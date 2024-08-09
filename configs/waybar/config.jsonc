@@ -12,19 +12,19 @@
 	"modules-left" : [
 		"cpu",
 		"memory",
-		"disk#root",
-		"disk#home",
-		/*"disk#media",*/
+        "group/drive",
         "temperature#cpu",
         "network",
 	],
 
 	"modules-center" : [
-		"clock",
+		"clock#calendar",
+		"clock#time",
 	],
 
 	"modules-right" : [
 		"hyprland/workspaces",
+        "hyprland/window",
         "group/audio",
 	],
 
@@ -40,6 +40,19 @@
 		"format": "\uefc5 {percentage}%",
 	},
 
+    "group/drive": {
+        "orientation": "inherit",
+        "drawer" : {
+            "transition-duration": 500,
+            "transition-left-to-right": true,
+        },
+        "modules": [
+            "disk#root",
+            "disk#home",
+            "disk#media",
+            "disk#vm",
+        ],
+    },
     "disk#root" : {
         "interval": 300,
         "format": " {path}: {percentage_used}%",
@@ -54,6 +67,11 @@
         "interval": 300,
         "format": "{path}: {percentage_used}%",
         "path": "/media"
+    },
+    "disk#vm" : {
+        "interval": 300,
+        "format": "{path}: {percentage_used}%",
+        "path": "/vm"
     },
 
     "temperature#cpu": {
@@ -75,13 +93,19 @@
 
 
 
-	"clock" : {
+	"clock#calendar" : {
+		"timezone": "Australia/Sydney",
+		"interval":	60,
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "󰃮 {:%a %d/%m}",
+	},
+
+    "clock#time" : {
 		"timezone": "Australia/Sydney",
 		"interval":	1,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format": "{:%H:%M:%S}",
-		"format-alt": "{:%a, %d/%m/%y}",
-	},
+        "format": " {:%H:%M}"
+    },
 
 
 
@@ -100,11 +124,24 @@
         },
 	},
 
+    "hyprland/window": {
+        "format": "{class}",
+        "rewrite": {
+            "kitty": "󰄛 Kitty",
+            "firefox": "󰈹 Firefox",
+            "librewolf": "󰩃 Librewolf",
+            "vesktop": " Vesktop",
+            "org.pwmt.zathura": " Zathura",
+            "com.obsproject.Studio": " obs",
+            "org.pulseaudio.pavucontrol": "󰤽 pavucontrol",
+        },
+    },
+
     "group/audio": {
         "orientation": "inherit",
         "drawer" : {
             "transition-duration": 500,
-            "transition-left-to-right": true,
+            "transition-left-to-right": false,
             "children-class": "groupaudio",
         },
         "modules": [
@@ -114,7 +151,9 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": "|  0%",
+        "format-muted": " 0%",
+        "on-click": "pavucontrol",
+        "on-click-right": "pamixer -t",
         "states": {
             "low": "15",
             "medium": "40",
