@@ -127,6 +127,7 @@
     "hyprland/window": {
         "format": "{class}",
         "rewrite": {
+            "": " None",
             "kitty": "󰄛 Kitty",
             "firefox": "󰈹 Firefox",
             "librewolf": "󰩃 Librewolf",
