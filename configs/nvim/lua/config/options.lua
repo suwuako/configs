@@ -1,4 +1,14 @@
 -- LEADER OPTIONS ARE SET IN configs/lazy.lua
+vim.opt.guicursor = ""
+vim.opt.wrap = true
+
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
 
 vim.g.have_nerd_font = true
 
