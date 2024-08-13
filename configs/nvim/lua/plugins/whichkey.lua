@@ -41,6 +41,7 @@ return {
         config = function()
             local wk = require("which-key")
             wk.add({
+                { "<leader>q", group = "[Q]uit" },
                 { "<leader>s", group = "[S]earch"},
                 { "<leader>n", group = "[N]otifications" },
                 { "<leader>l", group = "[L]azy", icon = "" },

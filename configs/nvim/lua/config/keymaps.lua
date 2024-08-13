@@ -7,6 +7,13 @@ vim.keymap.set("i", "jj", "<Esc>")
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- move while selecting in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- quick quit
+vim.keymap.set("n", "<leader>qq", "<cmd>wqa<CR>", { desc = "Write [Q]uit all" })
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
