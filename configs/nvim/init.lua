@@ -11,7 +11,7 @@
 -- [ ] persistence
 -- [ ] autocomplete
 
--- setup lazy
+-- setup lezy
 require("config.lazy")
 
 -- setup options
