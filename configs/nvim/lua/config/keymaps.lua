@@ -7,9 +7,6 @@ vim.keymap.set("i", "jj", "<Esc>")
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- quick quit
-vim.keymap.set("n", "<leader>qq", "<cmd>wqa<CR>", { desc = "Write [Q]uit all" })
-
 -- moving while visual
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
