@@ -1,0 +1,141 @@
+;---------------------------------------------------------------------------------------------------------------------
+;                                   TIME BAR CONFIG
+;---------------------------------------------------------------------------------------------------------------------
+
+(defwindow bar
+    :monitor 2
+    :geometry (geometry :x "0"
+                        :y "10px"
+                        :width "12%"
+                        :height "2.3%"
+                        :anchor "top center")
+    :stacking "fg"
+    :exclusive "true"
+    ""
+)
+
+(defwindow time_window
+    :monitor 2
+    :geometry (geometry :x "0%"
+                        :y "-45px"
+                        :width "13%"
+                        :height "4%"
+                        :anchor "top center")
+                
+    :stacking "fg"
+    (
+        timebar
+    )
+)
+
+(defwidget timebar []
+    (eventbox
+        :timeout "100ms"
+        :class "timebar"
+        :onclick "eww o datebar --toggle"
+        :onhover "eww o datebar --toggle"
+        :onhoverlost "eww o datebar --toggle"
+        "${time.time}")
+)
+
+(defwindow datebar
+    :monitor 2
+    :geometry (geometry :x "0px"
+                        :y "-30px"
+                        :width "20%"
+                        :height "2%"
+                        :anchor "top center")
+    :hexpand "true"
+    :stacking "fg"
+    :exclusive "false"
+    (
+        dateclick
+    )
+)
+
+(defwidget dateclick []
+    (box
+        (transform
+            :translate-x "45px"
+            "${time.day}"
+            
+        )
+        (transform
+            :translate-x "-30px"
+            "${time.date}")
+    )
+)
+
+
+(defpoll time 
+    :interval "1s"
+    `date +'{"time":"%I:%M:%S",
+            "day":"%a",
+            "date":"%d/%m/%y"}'`
+)
+
+;---------------------------------------------------------------------------------------------------------------------
+;                                   AUDIO BAR CONFIG
+;---------------------------------------------------------------------------------------------------------------------
+
+(defwindow toolbar
+    :monitor 2
+    :geometry (geometry :x "20px"
+                        :y "-35px"
+                        :width "35px"
+                        :height "2.3%"
+                        :anchor "top right")
+    :stacking "fg"
+    :exclusive "true"
+    (
+        toolbar_hover
+    )
+)
+
+(defvar extend_toolbar "true")
+(defwidget toolbar_hover []
+    (box
+        :class "toolbar_hover"
+        :spacing "10"
+        :space-evenly "false"
+        (revealer
+            :transition "slideleft"
+            :reveal "${extend_toolbar}"
+            (box
+                (label
+                :text "meow")
+                (label
+                :text "woof")
+                (label
+                :text "honk")
+            )
+        )
+        (eventbox 
+            :halign "center"
+            :onclick {extend_toolbar ? "eww update extend_toolbar='false'" : "eww update extend_toolbar='true'"}
+            "   "
+        )
+    )
+)
+
+;---------------------------------------------------------------------------------------------------------------------
+;                                                   BATTERY DISPLAY
+;---------------------------------------------------------------------------------------------------------------------
+
+(defwindow meow
+    :monitor 2
+    :geometry (geometry :x "0"
+                        :y "10px"
+                        :width "12%"
+                        :height "2.3%"
+                        :anchor "top center")
+    :stacking "fg"
+    :exclusive "true"
+    mouse_battery
+)
+
+(defpoll mouse_battery
+    :interval "30s"
+    `upower -i /org/freedesktop/UPower/devices/battery_hidpp_battery_0 | grep percentage | awk '{print $2}'`
+)
+;upower -i /org/freedesktop/UPower/devices/battery_hidpp_battery_0 | grep percentage | awk '{print $2}'

@@ -1,0 +1,18 @@
+device_name = "BY Tech Gaming Keyboard"
+phys = "usb-0000:00:14.0-4/input0"
+
+# [[dual_role]]
+# input = "KEY_CAPSLOCK"
+# hold = ["KEY_LEFTCTRL"]
+# tap = ["KEY_ESC"]
+[[remap]]
+input = ["KEY_CAPSLOCK"]
+output = ["KEY_GRAVE"]
+
+[[remap]]
+input = ["KEY_COMPOSE"]
+output = ["KEY_GRAVE"]
+
+[[remap]]
+input = ["KEY_RIGHTCTRL"]
+output = ["KEY_GRAVE"]
