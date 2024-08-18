@@ -26,6 +26,7 @@
 		"hyprland/workspaces",
         "hyprland/window",
         "group/audio",
+        "battery",
 	],
 
 
@@ -115,9 +116,9 @@
         "all-outputs": false,
         "format-icons": {
             "active-only": false,
-            "active": "",
-            "empty": "",
-            "default": "",
+            "active": "",
+            "empty": "",
+            "default": "",
         },
         "persistent-workspaces": {
             "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -169,5 +170,11 @@
         "min": 0,
         "max": 100,
         "orientation": "horizontal",
-    }
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "interval": 10,
+        "format": "{icon} {capacity}% eta: {time}",
+    },
 }
