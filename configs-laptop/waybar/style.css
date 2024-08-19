@@ -17,7 +17,7 @@
 @define-color text_border @crust;
 
 * { 
-	font-size: 10px; 
+	font-size: 18px; 
 	font-family: hermit, "Symbols Nerd Font Mono";
 	font-weight: bold;	
 	color: @text_color;
@@ -40,22 +40,20 @@
 
 .modules-center, .modules-right, .modules-left {
 	border-style: solid;
-	border-width: 1.4px;
+	border-width: 2.4px;
 	border-color: @border_color;
 
 	background-color: @module_bg;
 	border-radius: 10px;
 }
 
-#cpu, #memory, #disk, #temperature, #network, #workspaces, #pulseaudio, #window {
-	border-width: 1.4px;
+#battery, #cpu, #memory, #disk, #temperature, #network, #workspaces, #pulseaudio, #window {
+	border-width: 2.4px;
 	border-style: solid;
 	border-radius: 10px;
 
-	padding-right: 6px;
-	padding-left: 6px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
 #cpu {
@@ -122,7 +120,7 @@
 }
 
 .groupaudio {
-	border-color: @sky;
+	border-color: @yellow;
 	border-width: 2.4px;
 	border-style: solid;
 	border-radius: 10px;
@@ -134,10 +132,10 @@
 }
 
 #pulseaudio {
-	color: @sky;
+	color: @yellow;
 	padding-right: 10px;
 
-	border-color: @sky;
+	border-color: @yellow;
 }
 
 #pulseaudio-slider {
@@ -162,10 +160,21 @@
 }
 #pulseaudio-slider highlight {
     min-height: 4px;
-    background-color: @sky;
-    border-color: @sky;
+    background-color: @yellow;
+    border-color: @yellow;
 	border-radius: 25px;
     border-style: solid;
+}
+
+.groupbattery {
+	border-color: @green;
+	border-width: 2.4px;
+	border-style: solid;
+	border-radius: 10px;
+}
+#battery {
+    color: @green;
+    border-color: @green;
 }
 
 window#waybar{

@@ -1,5 +1,4 @@
 {
-
 	"layer": "top",
 	"position": "top",
 	"height": 35,
@@ -8,6 +7,7 @@
 	"margin-right": 8,
 	"margin-bottom": -14,
 	"spacing": 10,
+	"output": "eDP-1",			// EDIT THIS FOR MONITOR
 
 	"modules-left" : [
 		"cpu",
@@ -50,8 +50,6 @@
         "modules": [
             "disk#root",
             "disk#home",
-            "disk#media",
-            "disk#vm",
         ],
     },
     "disk#root" : {
@@ -116,12 +114,12 @@
         "all-outputs": false,
         "format-icons": {
             "active-only": false,
-            "active": "",
-            "empty": "",
-            "default": "",
+            "active": "",
+            "empty": "",
+            "default": "",
         },
         "persistent-workspaces": {
-            "eDP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            "eDP-1": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
         },
 	},
 
@@ -165,16 +163,39 @@
             "default": ["", "", ""],
         },
     },
-
     "pulseaudio/slider": {
         "min": 0,
         "max": 100,
         "orientation": "horizontal",
     },
 
+    "group/battery": {
+        "orientation": "inherit",
+        "drawer" : {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+            "children-class": "groupbattery",
+        },
+        "modules": [
+            "battery",
+            "battery#eta",
+        ],
+    },
     "battery": {
         "bat": "BAT0",
-        "interval": 10,
-        "format": "{icon} {capacity}% eta: {time}",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15,
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "", "", "", "", ""
+        ],
+    },
+    "battery#eta": {
+        "bat": "BAT0",
+        "interval": 60,
+        "format": "ETA: {time}",
     },
 }
