@@ -47,7 +47,7 @@
 	border-radius: 10px;
 }
 
-#battery, #cpu, #memory, #disk, #temperature, #network, #workspaces, #pulseaudio, #window {
+#battery, #cpu, #memory, #disk, #temperature, #network, #workspaces, #pulseaudio, #window, #backlight {
 	border-width: 2.4px;
 	border-style: solid;
 	border-radius: 10px;
@@ -143,14 +143,6 @@
 	padding-right: 10px;
 	padding-left: 10px;
 }
-#pulseaudio-slider slider {
-    min-height: 0px;
-    min-width: 0px;
-    opacity: 0;
-    background-image: none;
-    border: none;
-    box-shadow: none;
-}
 #pulseaudio-slider trough {
     min-height: 4px;
     background-color: @text;
@@ -165,8 +157,16 @@
 	border-radius: 25px;
     border-style: solid;
 }
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
 
-.groupbattery {
+.groupbat {
 	border-color: @green;
 	border-width: 2.4px;
 	border-style: solid;
@@ -175,6 +175,44 @@
 #battery {
     color: @green;
     border-color: @green;
+}
+
+#backlight {
+    color: @sky;
+    border-color: @sky;
+}
+#backlight-slider {
+    min-width: 150px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+#backlight-slider trough {
+    min-height: 4px;
+    background-color: @text;
+    border-color: @text;
+	border-radius: 25px;
+    border-style: solid;
+}
+#backlight-slider highlight {
+    min-height: 4px;
+    background-color: @sky;
+    border-color: @sky;
+	border-radius: 25px;
+    border-style: solid;
+}
+#backlight-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+.grouplight {
+	border-color: @sky;
+	border-width: 2.4px;
+	border-style: solid;
+	border-radius: 10px;
 }
 
 window#waybar{

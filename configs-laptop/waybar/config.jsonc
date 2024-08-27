@@ -26,7 +26,8 @@
 		"hyprland/workspaces",
         "hyprland/window",
         "group/audio",
-        "battery",
+        "group/bat",
+        "group/brightness",
 	],
 
 
@@ -169,12 +170,12 @@
         "orientation": "horizontal",
     },
 
-    "group/battery": {
+    "group/bat": {
         "orientation": "inherit",
         "drawer" : {
             "transition-duration": 500,
             "transition-left-to-right": false,
-            "children-class": "groupbattery",
+            "children-class": "groupbat",
         },
         "modules": [
             "battery",
@@ -197,5 +198,23 @@
         "bat": "BAT0",
         "interval": 60,
         "format": "ETA: {time}",
+    },
+
+    "group/brightness": {
+        "orientation": "inherit",
+        "drawer" : {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+            "children-class": "grouplight",
+        },
+        "modules": [
+            "backlight",
+            "backlight/slider",
+        ],
+    },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
     },
 }
