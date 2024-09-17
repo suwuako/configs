@@ -8,6 +8,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias dl='yt-dlp --extract-audio --audio-format mp3'
+alias lsa='ls -alh'
 
 eval "$(thefuck --alias)"
 eval "$(zoxide init --cmd cd bash)"

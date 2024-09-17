@@ -8,7 +8,7 @@ my configs for everything i use on linux
 
 ~~- [ ] eww config~~
 - [x] waybar config
-- [ ] some sort of daemon
+- [ ] some sort of notif daemon
 - [ ] program launcher
 - [ ] colour theme
 

@@ -94,18 +94,24 @@
 	padding-left: 5px;
 }
 
+#workspaces label {
+    font-size: 14px;
+}
+
 #workspaces button {
     color: @pink;
     padding: 0 1px;
     box-shadow: none;
 }
 
-#workspaces button.persistant {
-    color: @pink;
-}
-
 #workspaces button.empty {
     color: @yellow;
+}
+
+#workspaces button.visible {
+    color: @green;
+    background: @transparent;
+    border: @transparent;
 }
 
 #workspaces button.active {
