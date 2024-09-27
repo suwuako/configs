@@ -1,20 +1,25 @@
--- TODO:
--- [x] catppuccin
--- [ ] neotree
--- [ ] nvim-notify
--- [ ] telescope
--- [ ] whichkey
--- [x] treesitter
--- [x] lsp
--- [x] mason
--- [ ] startup
--- [ ] persistence
--- [ ] autocomplete
+-- todos [ ] LSP
+-- [ ] neorg
+-- [x] sync clipboard
+-- [x] fugitive
+-- [ ] noneckpain
+-- [ ] ctags
+-- [ ] syntax highlighting
+-- [ ] auto braces
 
--- setup lezy
-require("config.lazy")
+-- lazy
+require("config/lazy")
 
--- setup options
-require("config.options")
-require("config.keymaps")
-require("config.autocommands")
+-- options
+require("config/options/global")
+require("config/options/editing")
+require("config/options/visual")
+require("config/options/autocommands")
+
+-- keymaps
+require("config/keymaps/nvim")
+require("config/keymaps/window")
+require("config/keymaps/misc")
+
+-- startup
+require("config/startup")
