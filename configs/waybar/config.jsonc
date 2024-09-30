@@ -26,6 +26,7 @@
 		"hyprland/workspaces",
         "hyprland/window",
         "group/audio",
+        "custom/keystrokes",
 	],
 
 
@@ -169,5 +170,9 @@
         "min": 0,
         "max": 100,
         "orientation": "horizontal",
+    },
+
+    "custom/keystrokes": {
+        "exec": "~/projects/waybar-keystrokes/a.out",
     }
 }

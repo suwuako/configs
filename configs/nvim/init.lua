@@ -1,5 +1,5 @@
 -- todos [ ] LSP
--- [ ] neorg
+-- [x] neorg
 -- [x] sync clipboard
 -- [x] fugitive
 -- [ ] noneckpain
@@ -22,4 +22,4 @@ require("config/keymaps/window")
 require("config/keymaps/misc")
 
 -- startup
-require("config/startup")
+require("config/on_startup")
