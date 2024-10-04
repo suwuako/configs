@@ -20,7 +20,7 @@ vim.opt.smartcase = true
 vim.opt.clipboard = "unnamedplus"
 
 -- display
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 -- window configs
 vim.opt.splitright = true

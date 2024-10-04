@@ -1,4 +1,5 @@
--- todos [ ] LSP
+-- todos 
+-- [ ] LSP
 -- [x] neorg
 -- [x] sync clipboard
 -- [x] fugitive
