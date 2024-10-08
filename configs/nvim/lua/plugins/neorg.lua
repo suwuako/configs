@@ -53,6 +53,7 @@ return {
                 ["core.latex.renderer"] = {
                     conceal = true,
                 },
+                ["core.export.markdown"] = {},
             },
         })
         vim.opt.conceallevel = 2

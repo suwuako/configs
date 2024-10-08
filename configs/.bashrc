@@ -13,6 +13,9 @@ alias lsa='ls -alh'
 eval "$(thefuck --alias)"
 eval "$(zoxide init --cmd cd bash)"
 
+# add os cross compiler stuff to path
+export PATH=$HOME/opt/cross/bin:$PATH
+
 # python
 VIRTUAL_ENV_DISABLE_PROMPT=1 . ~/projects/py-venv/bin/activate
 

@@ -16,6 +16,9 @@ function toggle_colourscheme()
         vim.cmd.colorscheme "catppuccin-latte"
         colourscheme_flag = true
     end
+    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#7287fd" })
+    vim.api.nvim_set_hl(0, 'LineNr', { fg='#d20f39' })
+    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#40a02b' })
 end
 vim.keymap.set("n", "<leader>ec", toggle_colourscheme, { desc = "toggle between light/dark mode" })
 
