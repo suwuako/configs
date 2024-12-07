@@ -24,3 +24,8 @@ vim.keymap.set("n", "<leader>ec", toggle_colourscheme, { desc = "toggle between 
 
 -- quitall
 vim.keymap.set("n", "<C-q>", "<cmd>wqa<CR>", { desc = "Write + Quit all" })
+
+-- Neorg index
+vim.keymap.set("n", "<leader>ni", "<cmd>Neorg index<CR>", { desc = "Enter neorg's index file" })
+vim.keymap.set("n", "<C-n>", "<cmd>Neorg index<CR>", { desc = "Enter neorg's index file" })
+

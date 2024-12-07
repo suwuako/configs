@@ -1,7 +1,7 @@
 -- opening windows
 vim.keymap.set("n", "<C-v>", "<C-w>v")
 vim.keymap.set("n", "<C-b>", "<C-w>s")
-vim.keymap.set("n", "<C-d>l", "<cmd>vertical resize +5<CR>", { desc = "Expand window size horizontally by 5 spaces" })
+vim.keymap.set("n", "<C-p>l", "<cmd>vertical resize +5<CR>", { desc = "Expand window size horizontally by 5 spaces" })
 vim.keymap.set("n", "<C-d>j", "<cmd>resize +5<CR>", { desc = "Expand window size vertically by 5 spaces" })
 vim.keymap.set("n", "<C-d>k", "<cmd>resize -5<CR>", { desc = "Shrink window size vertically by 5 spaces" })
 vim.keymap.set("n", "<C-d>h", "<cmd>vertical resize -5<CR>", { desc = "Shrink window size horizontally by 5 spaces" })
@@ -25,5 +25,6 @@ vim.keymap.set("n", "<leader>ng", "<cmd>Neotree toggle right git_status<CR>", { 
 
 -- terminal
 vim.keymap.set("n", "<leader>tt", "<cmd>:terminal<CR>", { desc = "Open terminal" })
+vim.keymap.set("n", "<leader>tq", "<cmd>:exit<CR>", { desc = "Close window" })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-vim.keymap.set("t", "jj", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.keymap.set("t", "jj", "<cmd>:exit<CR>", { desc = "Exit terminal mode" })

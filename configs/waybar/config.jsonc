@@ -171,8 +171,4 @@
         "max": 100,
         "orientation": "horizontal",
     },
-
-    "custom/keystrokes": {
-        "exec": "~/projects/waybar-keystrokes/a.out",
-    }
 }
