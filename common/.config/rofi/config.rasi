@@ -1,0 +1,26 @@
+configuration {
+    modes: [ combi ];
+    combi-modes: [ window, run ];
+}
+
+window {
+    width: 1500px;
+
+}
+
+@theme "catppuccin-mocha"
+
+entry {
+    placeholder: "Type here";
+    cursor: pointer;
+}
+
+element {
+    orientation: horizontal;
+    children: [ element-text, element-icon ];
+    spacing: 5px;
+}
+
+element-icon {
+    size: 2.5em;
+}
