@@ -1,3 +1,7 @@
+# Configs
+
+contains all my dots for all devices. Uses GNU stow
+
 ## Fonts
 
 - terminal fonts: 
