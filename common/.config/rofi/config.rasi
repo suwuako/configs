@@ -1,26 +1,118 @@
+* {
+    bg-col:  #1e1e2e;
+    bg-col-light: #1e1e2e;
+    selected-col: #1e1e2e;
+    border-col: #a6e3a1;
+    fg-col: #cdd6f4;
+    fg-col2: #f38ba8;
+
+    blue: #89b4fa;
+    grey: #6c7086;
+    pink: #f5c2e7;
+    green: #a6e3a1;
+    red: #f38ba8;
+
+
+    width: 600;
+    font: "Hermit Bold 12";
+}
 configuration {
     modes: [ combi ];
-    combi-modes: [ window, run ];
+    combi-modes: [ drun ];
+    dpi: 125;
 }
+
 
 window {
-    width: 1500px;
-
+    width: 50%;
+    height: 65%;
+    border-color: @fg-col;
+    border-radius: 5px;
+    border: 2px 2px;
+    background-color: @bg-col;
+    foreground-color: @fg-col;
+}
+mainbox {
+    background-color: @bg-col;
+    foreground-color: @fg-col;
 }
 
-@theme "catppuccin-mocha"
 
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 0px;
+    margin: 0px 0px 5px 0px;
+}
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 3px;
+    margin: 10px 0px 0px 0.5%;
+}
 entry {
-    placeholder: "Type here";
+    placeholder: "Type here...";
     cursor: pointer;
+    cursor-outline: true;
+    padding: 6px;
+    margin: 10px 0px 0px 1%;
+    text-color: @red;
+    background-color: @bg-col;
 }
 
+
+listview {
+    border: 3px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 0.5%;
+    columns: 1;
+    background-color: @bg-col;
+    foregorund-color: @fg-col;
+    border-color: @pink;
+    cycle: false;
+    dynamic: false;
+    lines: 6;
+    cursor: "default";
+}
+scrollbar {
+    background-color: @grey;
+    handle-color: @fg-col;
+}
 element {
+    enabled: true;
     orientation: horizontal;
-    children: [ element-text, element-icon ];
-    spacing: 5px;
+    children: [ element-icon, element-text ];
+    spacing: 6px;
+    background-color: @bg-col;
+    foreground-color: @bg-col;
+    border-color: @bg-col;
 }
-
+element normal.normal, element alternate.normal {
+    background-color: @bg-col;
+}
+element selected.normal {
+    background-color:  @bg-col ;
+    border: 3px 3px;
+    border-color: @red;
+    border-radius: 5px;
+}
+element-text selected.normal {
+    background-color: @bg-col;
+    text-color: @red  ;
+}
+element-text {
+    background-color: @bg-col;
+    border-color: @pink;
+    text-color:       @fg-col;
+    highlight: @red;
+    margin: 20px 0px 20px 0px;
+}
 element-icon {
-    size: 2.5em;
+    background-color: @bg-col;
+    foreground-color: @bg-col;
+    size: 1.25em;
+    margin: 0px 10px 0px 10px;
+    border-color: @bg-col;
 }

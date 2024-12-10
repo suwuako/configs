@@ -7,8 +7,7 @@
 	"margin-right": 8,
 	"margin-bottom": -14,
 	"spacing": 10,
-	"output": "HDMI-A-1",			// EDIT THIS FOR MONITOR
-    "output": "eDP-1",
+	"output": ["HDMI-A-1", "eDP-1"],			// EDIT THIS FOR MONITOR
 
 	"modules-left" : [
 		"cpu",
@@ -95,14 +94,14 @@
 
 
 	"clock#calendar" : {
-		"timezone": "Australia/Sydney",
+		"timezone": "Asia/Hong_Kong",
 		"interval":	60,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "󰃮 {:%a %d/%m}",
 	},
 
     "clock#time" : {
-		"timezone": "Australia/Sydney",
+		"timezone": "Asia/Hong_Kong",
 		"interval":	1,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": " {:%H:%M}"
