@@ -7,10 +7,13 @@ vim.keymap.set("n", "<C-d>k", "<cmd>resize -5<CR>", { desc = "Shrink window size
 vim.keymap.set("n", "<C-d>h", "<cmd>vertical resize -5<CR>", { desc = "Shrink window size horizontally by 5 spaces" })
 
 -- moving between windows
+--[[
+        redundant because of tmux
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move focus to left window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move focus to lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move focus to upper window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move focus to right window" })
+--]]
 
 -- tab stuff
 vim.keymap.set("n", "<A-t>", "<cmd>tabnew<CR>", { desc = "Open new tabpage" })
