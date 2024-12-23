@@ -115,7 +115,7 @@
         "all-outputs": false,
         "format-icons": {
             "active-only": false,
-            "active": "",
+            "active": "<span color='#A6E3A1'></span>",
             "empty": "",
             "default": "",
         },

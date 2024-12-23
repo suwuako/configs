@@ -1,1 +1,1 @@
-vim.cmd("Neotree right reveal")
+-- vim.cmd("Neotree right reveal")

@@ -17,8 +17,8 @@
     font: "Hermit Bold 12";
 }
 configuration {
-    modes: [ combi ];
-    combi-modes: [ drun ];
+    modes: [ drun ];
+    combi-modes: [ window, drun ];
     dpi: 125;
 }
 
