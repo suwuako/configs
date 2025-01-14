@@ -1,11 +1,11 @@
 -- todos 
--- [ ] LSP
+-- [x] LSP
 -- [x] neorg
 -- [x] sync clipboard
 -- [x] fugitive
 -- [ ] noneckpain
--- [ ] ctags
--- [ ] syntax highlighting
+-- [x] ctags
+-- [x] syntax highlighting
 -- [ ] auto braces
 
 -- lazy
