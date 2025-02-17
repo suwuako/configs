@@ -2,6 +2,10 @@
 
 contains all my dots for all devices. Uses GNU stow
 
+```
+Usage: stow --target=${HOME} file
+```
+
 ## Fonts
 
 - terminal fonts: 
