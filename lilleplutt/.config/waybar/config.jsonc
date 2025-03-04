@@ -94,14 +94,14 @@
 
 
 	"clock#calendar" : {
-		"timezone": "Asia/Hong_Kong",
+		"timezone": "Australia/Sydney",
 		"interval":	60,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "󰃮 {:%a %d/%m}",
 	},
 
     "clock#time" : {
-		"timezone": "Asia/Hong_Kong",
+		"timezone": "Australia/Sydney",
 		"interval":	1,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": " {:%H:%M}"
