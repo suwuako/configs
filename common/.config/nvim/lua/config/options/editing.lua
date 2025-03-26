@@ -32,3 +32,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- tags
 vim.opt.tags = ".tags,tags,./.tags,./tags,~/.tags"
+
+-- folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
