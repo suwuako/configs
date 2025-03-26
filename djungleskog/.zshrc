@@ -9,6 +9,9 @@ export ZSH="$HOME/.oh-my-zsh"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Python
+# VIRTUAL_ENV_DISABLE_PROMPT=1 . ~/git/py-venv/bin/activate
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
