@@ -30,3 +30,5 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(thefuck --alias)"
+
+source ~/git/pyvenv/bin/activate
