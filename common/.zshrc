@@ -30,5 +30,8 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(thefuck --alias)"
-
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source ~/git/pyvenv/bin/activate
+
+export PATH="$PATH:/home/suwa/git/comp/comp2511/gradle-8.8/bin"
+export PATH=$PATH:$HOME/git/os161/tools/bin

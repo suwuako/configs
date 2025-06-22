@@ -7,7 +7,7 @@
 	"margin-right": 8,
 	"margin-bottom": -14,
 	"spacing": 10,
-	"output": "DP-1",			// EDIT THIS FOR MONITOR
+	"output": "DP-2",			// EDIT THIS FOR MONITOR
 
 	"modules-left" : [
 		"cpu",

@@ -36,3 +36,7 @@ vim.opt.tags = ".tags,tags,./.tags,./tags,~/.tags"
 -- folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- max length
+vim.opt.textwidth = 90
+vim.opt.linebreak = true

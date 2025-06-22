@@ -1,4 +1,6 @@
 return {
+--[[
+
     {
       "vhyrro/luarocks.nvim",
       priority = 1001,
@@ -27,4 +29,5 @@ return {
         { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
       },
     }
+--]]
 }
