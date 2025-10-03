@@ -23,6 +23,8 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 
 alias ls='ls --color=auto'
+alias l='ls --color=auto -al'
+alias screenshare='wf-recorder --muxer=v4l2 --codec=rawvideo --file=/dev/video0 -x yuv420p'
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -35,3 +37,7 @@ source ~/git/pyvenv/bin/activate
 
 export PATH="$PATH:/home/suwa/git/comp/comp2511/gradle-8.8/bin"
 export PATH=$PATH:$HOME/git/os161/tools/bin
+export PATH=$PATH:$HOME/os161-tools/usr/bin
+export PATH=$PATH:$HOME/os161-tools/usr2/local/bin
+export PATH=$PATH:$HOME/git/rustracer/scripts
+export MAKESYSPATH=~/os161-tools/usr2/local/share/mk
