@@ -24,3 +24,6 @@ vim.keymap.set("n", "<leader>ec", toggle_colourscheme, { desc = "toggle between 
 
 -- quitall
 vim.keymap.set("n", "<C-q>", "<cmd>wqa<CR>", { desc = "Write + Quit all" })
+
+
+vim.api.nvim_set_keymap('n', '<leader>tt', ':call v:lua.toggle_diagnostics()<CR>',  {noremap = true, silent = true})

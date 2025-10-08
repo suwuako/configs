@@ -27,6 +27,5 @@ vim.keymap.set("n", "<leader>nb", "<cmd>Neotree toggle right buffers<CR>", { des
 vim.keymap.set("n", "<leader>ng", "<cmd>Neotree toggle right git_status<CR>", { desc = "Open neotree git_status" })
 
 -- terminal
-vim.keymap.set("n", "<leader>tt", "<cmd>:terminal<CR>", { desc = "Open terminal" })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set("t", "jj", "<C-\\><C-n>", { desc = "Exit terminal mode" })
