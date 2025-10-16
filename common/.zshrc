@@ -10,6 +10,10 @@ zstyle :compinstall filename '/home/suwa/.zshrc'
 
 # cross compilers
 export PATH=~/opt/cross/bin:$PATH
+export PATH="$PATH:/home/suwa/git/comp/comp2511/gradle-8.8/bin"
+export PATH=$PATH:$HOME/git/os161/tools/bin
+export LC_ALL=en_US.UTF-8
+export LANG=en.US.UTF-8
 
 autoload -Uz compinit
 compinit
@@ -34,10 +38,3 @@ eval "$(zoxide init zsh --cmd cd)"
 eval "$(thefuck --alias)"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source ~/git/pyvenv/bin/activate
-
-export PATH="$PATH:/home/suwa/git/comp/comp2511/gradle-8.8/bin"
-export PATH=$PATH:$HOME/git/os161/tools/bin
-export PATH=$PATH:$HOME/os161-tools/usr/bin
-export PATH=$PATH:$HOME/os161-tools/usr2/local/bin
-export PATH=$PATH:$HOME/git/rustracer/scripts
-export MAKESYSPATH=~/os161-tools/usr2/local/share/mk
