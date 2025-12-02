@@ -41,7 +41,10 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.textwidth = 90
 vim.opt.linebreak = true
 vim.g.diagnostics_active = true
+<<<<<<< HEAD
 
+=======
+>>>>>>> 79b141a (config)
 vim.diagnostic.config({
   virtual_text = {
     -- Set to true to enable virtual text for diagnostics

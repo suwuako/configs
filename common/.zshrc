@@ -29,6 +29,7 @@ bindkey -v
 alias ls='ls --color=auto'
 alias l='ls --color=auto -al'
 alias screenshare='wf-recorder --muxer=v4l2 --codec=rawvideo --file=/dev/video0 -x yuv420p'
+alias tbonsai="cbonsai -t 60 -S"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
