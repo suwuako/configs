@@ -45,11 +45,11 @@
 !_TAG_PARSER_VERSION!Markdown	1.1	/current.age/
 !_TAG_PARSER_VERSION!Sh	0.0	/current.age/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
-!_TAG_PROC_CWD	/home/suwa/git/configs/	//
+!_TAG_PROC_CWD	/home/sw/git/configs/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	6.2.0	/v6.2.0/
+!_TAG_PROGRAM_VERSION	6.2.1	//
 !_TAG_ROLE_DESCRIPTION!Sh!heredoc	endmarker	/end marker/
 !_TAG_ROLE_DESCRIPTION!Sh!script	loaded	/loaded/
 #backlight	lilleplutt/.config/waybar/style.css	/^#backlight {$/;"	i
@@ -227,7 +227,7 @@ branch	common/.config/nvim/lazy-lock.json	/^  "diffview.nvim": { "branch": "main
 branch	common/.config/nvim/lazy-lock.json	/^  "friendly-snippets": { "branch": "main", "commit": "de8fce94985873666bd9712ea3e49ee17aadb1ed" /;"	s	object:friendly-snippets
 branch	common/.config/nvim/lazy-lock.json	/^  "git-conflict.nvim": { "branch": "main", "commit": "4bbfdd92d547d2862a75b4e80afaf30e73f7bbb4" /;"	s	object:git-conflict.nvim
 branch	common/.config/nvim/lazy-lock.json	/^  "gitsigns.nvim": { "branch": "main", "commit": "ee7634ab4f0a6606438fe13e16cbf2065589a5ed" },$/;"	s	object:gitsigns.nvim
-branch	common/.config/nvim/lazy-lock.json	/^  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },$/;"	s	object:lazy.nvim
+branch	common/.config/nvim/lazy-lock.json	/^  "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },$/;"	s	object:lazy.nvim
 branch	common/.config/nvim/lazy-lock.json	/^  "lualine.nvim": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },$/;"	s	object:lualine.nvim
 branch	common/.config/nvim/lazy-lock.json	/^  "mason-lspconfig.nvim": { "branch": "main", "commit": "7446f47b3dfb7df801f31a6f6783c2ad119a693/;"	s	object:mason-lspconfig.nvim
 branch	common/.config/nvim/lazy-lock.json	/^  "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },$/;"	s	object:mason.nvim
@@ -262,7 +262,7 @@ commit	common/.config/nvim/lazy-lock.json	/^  "diffview.nvim": { "branch": "main
 commit	common/.config/nvim/lazy-lock.json	/^  "friendly-snippets": { "branch": "main", "commit": "de8fce94985873666bd9712ea3e49ee17aadb1ed" /;"	s	object:friendly-snippets
 commit	common/.config/nvim/lazy-lock.json	/^  "git-conflict.nvim": { "branch": "main", "commit": "4bbfdd92d547d2862a75b4e80afaf30e73f7bbb4" /;"	s	object:git-conflict.nvim
 commit	common/.config/nvim/lazy-lock.json	/^  "gitsigns.nvim": { "branch": "main", "commit": "ee7634ab4f0a6606438fe13e16cbf2065589a5ed" },$/;"	s	object:gitsigns.nvim
-commit	common/.config/nvim/lazy-lock.json	/^  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },$/;"	s	object:lazy.nvim
+commit	common/.config/nvim/lazy-lock.json	/^  "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },$/;"	s	object:lazy.nvim
 commit	common/.config/nvim/lazy-lock.json	/^  "lualine.nvim": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },$/;"	s	object:lualine.nvim
 commit	common/.config/nvim/lazy-lock.json	/^  "mason-lspconfig.nvim": { "branch": "main", "commit": "7446f47b3dfb7df801f31a6f6783c2ad119a693/;"	s	object:mason-lspconfig.nvim
 commit	common/.config/nvim/lazy-lock.json	/^  "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },$/;"	s	object:mason.nvim
@@ -329,7 +329,7 @@ init	common/.config/nvim/lua/plugins/lualine.lua	/^    init = function()$/;"	f
 init	common/.config/nvim/lua/plugins/telescope.lua	/^    init = function ()$/;"	f
 ipc	djungleskog/.config/hypr/hyprpaper.conf	/^ipc = off$/;"	k
 ipc	lilleplutt/.config/hypr/hyprpaper.conf	/^ipc = off$/;"	k
-lazy.nvim	common/.config/nvim/lazy-lock.json	/^  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },$/;"	o
+lazy.nvim	common/.config/nvim/lazy-lock.json	/^  "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },$/;"	o
 lualine.nvim	common/.config/nvim/lazy-lock.json	/^  "lualine.nvim": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },$/;"	o
 mason-lspconfig.nvim	common/.config/nvim/lazy-lock.json	/^  "mason-lspconfig.nvim": { "branch": "main", "commit": "7446f47b3dfb7df801f31a6f6783c2ad119a693/;"	o
 mason.nvim	common/.config/nvim/lazy-lock.json	/^  "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },$/;"	o
@@ -367,11 +367,7 @@ window#waybar	lilleplutt/.config/waybar/style.css	/^window#waybar{$/;"	i
 windowrule	djungleskog/.config/hypr/hyprland.conf	/^windowrule = maxsize 1 1, class:^(xwaylandvideobridge)\$$/;"	k
 windowrule	djungleskog/.config/hypr/hyprland.conf	/^windowrule = noanim, class:^(xwaylandvideobridge)\$$/;"	k
 windowrule	djungleskog/.config/hypr/hyprland.conf	/^windowrule = noblur, class:^(xwaylandvideobridge)\$$/;"	k
-windowrule	djungleskog/.config/hypr/hyprland.conf	/^windowrule = nofocus, class:^(xwaylandvideobridge)$indowrulev2 = suppressevent maximize, class:./;"	k
-windowrule	djungleskog/.config/hypr/hyprland.conf	/^windowrule = noinitialfocus, class:^(xwaylandvideobridge)\$$/;"	k
 windowrule	djungleskog/.config/hypr/hyprland.conf	/^windowrule = opacity 0.0 override, class:^(xwaylandvideobridge)\$$/;"	k
-windowrule	lilleplutt/.config/hypr/hyprland.conf	/^windowrule = workspace 3, ^(zathura)$ # pdf viewer$/;"	k
-windowrule	lilleplutt/.config/hypr/hyprland.conf	/^windowrule = workspace 5, ^(vesktop)\$$/;"	k
 windowrulev2	djungleskog/.config/hypr/hyprland.conf	/^windowrulev2=float,title:^(flameshot)$/;"	k
 windowrulev2	djungleskog/.config/hypr/hyprland.conf	/^windowrulev2=move 0 0,title:^(flameshot)$/;"	k
 windowrulev2	djungleskog/.config/hypr/hyprland.conf	/^windowrulev2=suppressevent fullscreen,title:^(flameshot)$/;"	k
