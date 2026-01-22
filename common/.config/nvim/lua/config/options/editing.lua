@@ -76,3 +76,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+vim.filetype.add({
+  extension = {
+    ts = "javascript",
+    tsx = "javascript",
+    js = "javascript",
+    jsx = "javascript",
+  }
+})

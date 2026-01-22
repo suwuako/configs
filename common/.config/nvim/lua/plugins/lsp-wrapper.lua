@@ -18,7 +18,13 @@ return {
             lspconfig.lua_ls.setup({capabilities = capabilities})
             lspconfig.jdtls.setup({capabilities = capabilities})
             lspconfig.ast_grep.setup({capabilities = capabilities})
-            lspconfig.clangd.setup({capabilities = capabilities})
+            lspconfig.clangd.setup({
+                capabilities = capabilities,
+                cmd ={
+                    "clangd",
+                    "--query-driver=/home/sw/.local/share/renesas/e2_studio/toolchains/llvm_arm/LLVM-ET-Arm-18.1.3-Linux-x86_64/bin"
+                }
+            })
             -- lspconfig.asm_lsp.setup({capabilities = capabilities})
             lspconfig.ts_ls.setup({capabilities = capabilities})
             lspconfig.pylsp.setup({capabilities = capabilities})

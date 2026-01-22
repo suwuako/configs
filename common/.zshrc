@@ -39,3 +39,7 @@ eval "$(zoxide init zsh --cmd cd)"
 eval "$(thefuck --alias)"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source ~/git/pyvenv/bin/activate
+
+source ~/.cargo/env
+
+[ -f "/home/sw/.ghcup/env" ] && . "/home/sw/.ghcup/env" # ghcup-env
