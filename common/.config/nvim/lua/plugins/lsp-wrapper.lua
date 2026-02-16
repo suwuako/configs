@@ -8,7 +8,7 @@ return {
             require("mason").setup()
             require("mason-lspconfig").setup({
                 ensure_installed = { "rust_analyzer", "lua_ls", "clangd", "asm_lsp", "ts_ls", "pylsp", "ast_grep",
-                                     "jdtls" }
+                                     "jdtls", "hls" }
             })
 
             local lspconfig = require("lspconfig")
@@ -28,6 +28,7 @@ return {
             -- lspconfig.asm_lsp.setup({capabilities = capabilities})
             lspconfig.ts_ls.setup({capabilities = capabilities})
             lspconfig.pylsp.setup({capabilities = capabilities})
+            lspconfig.hls.setup({capabilities = capabilities})
         end,
     },
 
