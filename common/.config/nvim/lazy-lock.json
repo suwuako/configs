@@ -26,7 +26,6 @@
   "trouble.nvim": { "branch": "main", "commit": "f176232e7759c4f8abd923c21e3e5a5c76cd6837" },
   "vim-fugitive": { "branch": "master", "commit": "d4877e54cef67f5af4f950935b1ade19ed6b7370" },
   "vim-gutentags": { "branch": "master", "commit": "aa47c5e29c37c52176c44e61c780032dfacef3dd" },
-  "vimtex": { "branch": "master", "commit": "6e1229e23c3bbe93487ef62458b1241a2d8ff6af" },
   "which-key.nvim": { "branch": "main", "commit": "8badb359f7ab8711e2575ef75dfe6fbbd87e4821" },
   "wrapping.nvim": { "branch": "master", "commit": "a5210c29be19ed736eb3333677e08a57efebce78" }
 }

@@ -16,7 +16,18 @@ return {
 
             lspconfig.rust_analyzer.setup({capabilities = capabilities})
             lspconfig.lua_ls.setup({capabilities = capabilities})
-            lspconfig.jdtls.setup({capabilities = capabilities})
+            lspconfig.jdtls.setup({
+                capabilities = capabilities,
+                root_dir = lspconfig.util.root_pattern("VC"),
+                settings = {
+                    java = {
+                        project = {
+                            -- Tells the LSP that the root folder contains the source code
+                            sourcePaths = { "." },
+                        },
+                    }
+                }
+            })
             lspconfig.ast_grep.setup({capabilities = capabilities})
             lspconfig.clangd.setup({
                 capabilities = capabilities,
