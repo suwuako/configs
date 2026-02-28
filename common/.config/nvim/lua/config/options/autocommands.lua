@@ -86,3 +86,8 @@ vim.keymap.set("v", "J", ":m'>+1<cr>gv=gv", { noremap = true })
 vim.keymap.set("v", "K", ":m'<-2<cr>gv=gv", { noremap = true }) 
 
 M.nvim_create_augroups(autoCommands)
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = "tex",
+    command = "TSBufDisable highlight",
+})
