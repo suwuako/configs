@@ -18,7 +18,7 @@ return {
             lspconfig.lua_ls.setup({capabilities = capabilities})
             lspconfig.jdtls.setup({
                 capabilities = capabilities,
-                root_dir = lspconfig.util.root_pattern("VC"),
+                root_dir = lspconfig.util.root_pattern("VC");
                 settings = {
                     java = {
                         project = {
