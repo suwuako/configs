@@ -4,6 +4,9 @@ return {
     {"williamboman/mason-lspconfig.nvim"},
     {
         "neovim/nvim-lspconfig",
+        init = function()
+            vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
+        end,
         config = function()
             require("mason").setup()
             require("mason-lspconfig").setup({
@@ -16,26 +19,9 @@ return {
 
             lspconfig.rust_analyzer.setup({capabilities = capabilities})
             lspconfig.lua_ls.setup({capabilities = capabilities})
-            lspconfig.jdtls.setup({
-                capabilities = capabilities,
-                root_dir = lspconfig.util.root_pattern("VC");
-                settings = {
-                    java = {
-                        project = {
-                            -- Tells the LSP that the root folder contains the source code
-                            sourcePaths = { "." },
-                        },
-                    }
-                }
-            })
+            lspconfig.jdtls.setup({ capabilities = capabilities })
             lspconfig.ast_grep.setup({capabilities = capabilities})
-            lspconfig.clangd.setup({
-                capabilities = capabilities,
-                cmd ={
-                    "clangd",
-                    "--query-driver=/home/sw/.local/share/renesas/e2_studio/toolchains/llvm_arm/LLVM-ET-Arm-18.1.3-Linux-x86_64/bin"
-                }
-            })
+            lspconfig.clangd.setup({ capabilities = capabilities, })
             -- lspconfig.asm_lsp.setup({capabilities = capabilities})
             lspconfig.ts_ls.setup({capabilities = capabilities})
             lspconfig.pylsp.setup({capabilities = capabilities})
