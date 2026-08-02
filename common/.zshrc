@@ -1,24 +1,7 @@
 export GPG_TTY=$TTY
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/suwa/.zshrc'
-
-# cross compilers
-export PATH=~/opt/cross/bin:$PATH
-export PATH="$PATH:/home/suwa/git/comp/comp2511/gradle-8.8/bin"
-export PATH=$PATH:$HOME/git/os161/tools/bin
-export LC_ALL=en_US.UTF-8
-export LANG=en.US.UTF-8
-
-autoload -Uz compinit
-compinit
+#export LC_ALL=en_US.UTF-8
+#export LANG=en.US.UTF-8
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh/histfile
@@ -32,15 +15,5 @@ alias ls='ls --color=auto'
 alias l='ls --color=auto -al'
 alias screenshare='wf-recorder --muxer=v4l2 --codec=rawvideo --file=/dev/video0 -x yuv420p'
 alias tbonsai="cbonsai -t 60 -S"
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(zoxide init zsh --cmd cd)"
-eval "$(thefuck --alias)"
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source ~/git/pyvenv/bin/activate
-
-
-[ -f "/home/sw/.ghcup/env" ] && . "/home/sw/.ghcup/env" # ghcup-env

@@ -1,9 +1,8 @@
--- linenumbers
-vim.opt.relativenumber = true
+-- linenumbers vim.opt.relativenumber = true
 vim.opt.number = true
 
 -- colorscheme
-vim.cmd.colorscheme "catppuccin-mocha"
+vim.cmd.colorscheme "nord"
 
 -- 80 char line
 vim.opt.colorcolumn = "90"
