@@ -16,6 +16,9 @@
     width: 600;
     font: "Hermit Bold 12";
 }
+
+@theme "~/.config/rofi/nord.rasi"
+
 configuration {
     modes: [ drun ];
     combi-modes: [ window, drun ];
@@ -23,96 +26,3 @@ configuration {
 }
 
 
-window {
-    width: 50%;
-    height: 65%;
-    border-color: @fg-col;
-    border-radius: 5px;
-    border: 2px 2px;
-    background-color: @bg-col;
-    foreground-color: @fg-col;
-}
-mainbox {
-    background-color: @bg-col;
-    foreground-color: @fg-col;
-}
-
-
-inputbar {
-    children: [prompt,entry];
-    background-color: @bg-col;
-    border-radius: 5px;
-    padding: 0px;
-    margin: 0px 0px 5px 0px;
-}
-prompt {
-    background-color: @blue;
-    padding: 6px;
-    text-color: @bg-col;
-    border-radius: 3px;
-    margin: 10px 0px 0px 0.5%;
-}
-entry {
-    placeholder: "Type here...";
-    cursor: pointer;
-    cursor-outline: true;
-    padding: 6px;
-    margin: 10px 0px 0px 1%;
-    text-color: @red;
-    background-color: @bg-col;
-}
-
-
-listview {
-    border: 3px 0px 0px;
-    padding: 6px 0px 0px;
-    margin: 10px 0px 0px 0.5%;
-    columns: 1;
-    background-color: @bg-col;
-    foregorund-color: @fg-col;
-    border-color: @pink;
-    cycle: false;
-    dynamic: false;
-    lines: 6;
-    cursor: "default";
-}
-scrollbar {
-    background-color: @grey;
-    handle-color: @fg-col;
-}
-element {
-    enabled: true;
-    orientation: horizontal;
-    children: [ element-icon, element-text ];
-    spacing: 6px;
-    background-color: @bg-col;
-    foreground-color: @bg-col;
-    border-color: @bg-col;
-}
-element normal.normal, element alternate.normal {
-    background-color: @bg-col;
-}
-element selected.normal {
-    background-color:  @bg-col ;
-    border: 3px 3px;
-    border-color: @red;
-    border-radius: 5px;
-}
-element-text selected.normal {
-    background-color: @bg-col;
-    text-color: @red  ;
-}
-element-text {
-    background-color: @bg-col;
-    border-color: @pink;
-    text-color:       @fg-col;
-    highlight: @red;
-    margin: 20px 0px 20px 0px;
-}
-element-icon {
-    background-color: @bg-col;
-    foreground-color: @bg-col;
-    size: 1.25em;
-    margin: 0px 10px 0px 10px;
-    border-color: @bg-col;
-}

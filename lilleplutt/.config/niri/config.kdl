@@ -85,7 +85,7 @@ output "eDP-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080@60.00"
+    mode "2256x1504@120.00"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1
@@ -106,7 +106,7 @@ output "eDP-1" {
     position x=0 y=1080
 }
 
-output "HDMI-A-1" {
+output "DP-3" {
     mode "1920x1080@120.00"
     scale 1
     position x=0 y=0
@@ -173,27 +173,10 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#e5e9f0"
+        inactive-color "#4c566a"
 
-        // Color of the ring on inactive monitors.
-        //
-        // The focus ring only draws around the active window, so the only place
-        // where you can see its inactive-color is on other monitors.
-        inactive-color "#505050"
-
-        // You can also use gradients. They take precedence over solid colors.
-        // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
-        // The angle is the same as in linear-gradient, and is optional,
-        // defaulting to 180 (top-to-bottom gradient).
-        // You can use any CSS linear-gradient tool on the web to set these up.
-        // Changing the color space is also supported, check the wiki for more info.
-        //
-        // active-gradient from="#80c8ff" to="#c7ff7f" angle=45
-
-        // You can also color the gradient relative to the entire view
-        // of the workspace, rather than relative to just the window itself.
-        // To do that, set relative-to="workspace-view".
-        //
+        // active-gradient from="#d8dee9" to="#eceff4" angle=45
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
@@ -303,11 +286,8 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // The wiki explains how to configure individual animations:
 // https://yalter.github.io/niri/Configuration:-Animations
 animations {
-    // Uncomment to turn off all animations.
-    // off
-
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    slowdown 2
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -317,10 +297,7 @@ animations {
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    draw-border-with-background false
     default-column-width {}
 }
 
@@ -347,7 +324,8 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+
+window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
@@ -617,4 +595,4 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-spawn-at-startup "swaybg" "-i" "/home/sw/.config/walls/black_cat_house.jpg" "-m" "fill"
+spawn-at-startup "swaybg" "-i" "/home/sw/.config/wallpaper.png" "-m" "fill"
