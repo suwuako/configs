@@ -64,19 +64,6 @@ vim.diagnostic.config({
   },
 })
 
--- You might also want to set this within your LspAttach autocmd for specific LSPs
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("LspDiagnostics", { clear = true }),
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client.name == "your_lsp_server_name" then -- Replace with your LSP server name
-      vim.diagnostic.config({
-        virtual_text = { enable = true },
-      }, args.buf)
-    end
-  end,
-})
-
 vim.filetype.add({
   extension = {
     ts = "javascript",

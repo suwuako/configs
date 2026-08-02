@@ -1,5 +1,4 @@
-return {
-    -- lsp support
+return { -- lsp support
     {"williamboman/mason.nvim"},
     {"williamboman/mason-lspconfig.nvim"},
     {
@@ -8,6 +7,7 @@ return {
             vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
         end,
         config = function()
+
             require("mason").setup()
             require("mason-lspconfig").setup({
                 ensure_installed = { "rust_analyzer", "lua_ls", "clangd", "asm_lsp", "ts_ls", "pylsp", "ast_grep",
@@ -47,14 +47,22 @@ return {
             require("luasnip.loaders.from_vscode").lazy_load()
             local cmp = require("cmp")
             cmp.setup({
+
+                window = {
+                    completion = cmp.config.window.bordered({
+                        border = "rounded",
+                        winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:None,FloatBorder:CmpBorder",
+                    }),
+                    documentation = cmp.config.window.bordered({
+                        border = "rounded",
+                        winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:None,FloatBorder:CmpBorder",
+                    }),
+
+                },
                 snippet = {
                         expand = function(args)
                         require('luasnip').lsp_expand(args.body)
                         end,
-                    },
-                    window = {
-                        completion = cmp.config.window.bordered(),
-                        documentation = cmp.config.window.bordered(),
                     },
                     mapping = cmp.mapping.preset.insert({
                         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
